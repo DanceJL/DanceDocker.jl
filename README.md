@@ -57,7 +57,10 @@ To build Docker image:
 docker build -t <name>:<version> .
 ```
 
-where `version` is optional, as Docker will default tag to `latest`.
+where
+
+- `name` is name of output DOcker image.
+- `version` is optional, as Docker will default tag to `latest`.
 
 ### 3.2 - Running Docker Image
 
