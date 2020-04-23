@@ -1,9 +1,5 @@
 module DanceDocker
 
-# TODO: remove
-import Pkg
-Pkg.add(Pkg.PackageSpec(url="https://github.com/DanceJL/Dance.jl"))
-
 import Dance.Configuration
 
 

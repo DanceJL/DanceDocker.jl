@@ -15,10 +15,10 @@ end
             @test item[2]==value
         end
     end
-end=#
+end
 
 
-#=function delete_docker_container_image_and_project(;container_id::String, image_id::String) :: Nothing
+function delete_docker_container_image_and_project(;container_id::String, image_id::String) :: Nothing
     run(`docker container stop $container_id`)
     run(`docker image rmi $image_id -f`)
     cd("..")
