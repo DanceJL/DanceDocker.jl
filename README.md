@@ -11,16 +11,16 @@ Plugin to automatically generate Dockerfile for DanceJL project.
 Package can be installed with Julia's package manager, either by using Pkg REPL mode (*press ]*):
 
 ```
-pkg> add https://github.com/DanceJL/DanceDocker.jl
+pkg> add DanceDocker
 ```
 
 or by using Pkg functions
 
 ```julia
-julia> using Pkg; Pkg.add(Pkg.PackageSpec(url="https://github.com/DanceJL/DanceDocker.jl"))
+julia> using Pkg; Pkg.add("DanceDocker")
 ```
 
-Compatibility is with Julia 1.1 and Dance 0.0.1 upward.
+Compatibility is with Julia 1.1 and Dance 0.1.0 upward.
 
 
 ## 2 - Setup
