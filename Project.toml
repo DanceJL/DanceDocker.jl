@@ -1,7 +1,7 @@
 name = "DanceDocker"
 uuid = "0b4dc4cd-9a07-490e-bcea-830d79495a0b"
 authors = ["Chris \"Yoh\" Meyers <48554065+yoh-meyers@users.noreply.github.com>"]
-version = "0.0.1"
+version = "0.1.0"
 
 [compat]
 julia = "1.1"
