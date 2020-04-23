@@ -3,14 +3,17 @@ uuid = "0b4dc4cd-9a07-490e-bcea-830d79495a0b"
 authors = ["Chris \"Yoh\" Meyers <48554065+yoh-meyers@users.noreply.github.com>"]
 version = "0.1.0"
 
+[deps]
+Dance = "fc0ff973-d74e-417c-9681-260383068f65"
+
 [compat]
+Dance = "0.1.0"
 julia = "1.1"
 
 [extras]
-Dance = "fc0ff973-d74e-417c-9681-260383068f65"
 HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 SafeTestsets = "1bc83da4-3b8d-516f-aca4-4fe02f6d838f"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["Dance", "HTTP", "SafeTestsets", "Test"]
+test = ["HTTP", "SafeTestsets", "Test"]
