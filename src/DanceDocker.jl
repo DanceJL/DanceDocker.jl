@@ -28,7 +28,9 @@ function setup(path::String="."; version::String=string(VERSION)) :: Nothing
 
             dest_dockerfile_path::String = joinpath(abspath(path), "Dockerfile")
             cp(joinpath(@__DIR__, "../files/Dockerfile"), dest_dockerfile_path)
-            run(`chmod 755 $dest_dockerfile_path`)
+            if !Sys.iswindows()
+                run(`chmod 755 $dest_dockerfile_path`)
+            end
 
             file_string::String = ""
             open("Dockerfile", "r") do io
