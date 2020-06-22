@@ -34,8 +34,8 @@ end=#
 end=#
 
 
-function project_settings_and_launch() :: Bool
-    cd("demo/settings")
+function project_settings() :: Nothing
+    cd("settings")
 
     touch("dev.jl")
     open("dev.jl", "w") do io
@@ -48,5 +48,4 @@ function project_settings_and_launch() :: Bool
     end
 
     cd("..")
-    Dance.pre_launch(joinpath(abspath(@__DIR__), "demo"))
 end

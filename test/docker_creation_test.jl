@@ -9,10 +9,10 @@ include("./utils.jl")
 Dance.start_project("demo")
 cd("demo")
 @test_logs (:error, "Please add Project.toml to project root") DanceDocker.setup()
-cd("..")
 
 # Add Project.toml, generate Dockerfile and build Docker image
-project_settings_and_launch()
+project_settings()
+Dance.populate_settings(joinpath(abspath(@__DIR__), "demo"))
 add_project_toml()
 @test_logs (:info, "Dockerfile added to project root") DanceDocker.setup()
 
@@ -25,6 +25,7 @@ add_project_toml()
 docker_build_output = replace(read(`docker build -t demo .`, String), "\n" => "")
 container_id = replace(read(`docker run -d -p 80:8000 demo`, String), "\n" => "")
 image_id = string(split(split(docker_build_output, "Successfully built ")[2], "Successfully tagged")[1])
+sleep(40)
 
 # Test Docker port is accessible and rendering correctly
 r = HTTP.request("GET", "http://127.0.0.1/")
