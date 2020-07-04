@@ -28,7 +28,11 @@ function setup(path::String="."; version::String=string(VERSION)) :: Nothing
 
             dest_dockerfile_path::String = joinpath(abspath(path), "Dockerfile")
             cp(joinpath(@__DIR__, "../files/Dockerfile"), dest_dockerfile_path)
-            if !Sys.iswindows()
+            if Sys.iswindows()
+                run(`icacls.exe $dest_dockerfile_path /reset /T /Q`)
+                username::String = read(run(`whoami`), String)
+                run(`icacls.exe $dest_dockerfile_path /grant $username:F /T /Q`)
+            else
                 run(`chmod 755 $dest_dockerfile_path`)
             end
 
